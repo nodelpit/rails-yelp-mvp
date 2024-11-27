@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center mt-5 gap-3">
+  <div class="shadow rounded px-3 py-3" style="height: fit-content;">
+    <h2> <%= @restaurant.name %> </h2>
+    <p> <%= @restaurant.address %> </p>
+    <p> <%= @restaurant.phone_number %> </p>
+
+    <hr>
+  </div>
+  <div class="shadow rounded px-3 py-3">
+    <h2>Details</h2>
+    <% @restaurant.reviews.each do |review| %>
+      <div>
+       <p> ⭐️ <%= review.rating %>/5</p>
+       <p><%= review.content %></p>
+     </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center mt-5">
+  <%= link_to 'Add reviews ?', new_restaurant_review_path(@restaurant) %>
+</div>

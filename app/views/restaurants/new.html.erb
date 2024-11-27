@@ -1,0 +1,14 @@
+ <div class="row justify-content-center">
+    <div class="col-lg-4 mt-5 shadow rounded px-5 py-5">
+      <%= simple_form_for @restaurant, method: :post do |form| %>
+        <%= form.input :name, label: 'Name of restaurant', required: true %>
+        <%= form.input :address, label: 'Adresse', required: true %>
+        <%= form.input :phone_number, required: true %>
+        <%= form.input :category, collection: %w[ chinese italian japanese french belgian ] %>
+
+        <div class="d-flex justify-content-end">
+          <%= form.submit "Create restaurant", class: 'btn btn-primary mt-3' %>
+        </div>
+      <% end %>
+    </div>
+  </div>

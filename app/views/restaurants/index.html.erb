@@ -1,0 +1,21 @@
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5 px-5">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col">
+      <%= link_to restaurant_path(restaurant), class: "text-decoration-none text-dark" do %>
+        <div class="card h-100">
+          <div class="p-4 shadow rounded">
+            <h5><%= restaurant.name %></h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-secondary"></i>
+              <%= restaurant.address %>
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-secondary"></i>
+              <%= restaurant.phone_number %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
